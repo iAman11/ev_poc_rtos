@@ -1,5 +1,6 @@
-App/Src/app_led.o: ../App/Src/app_led.c ../Core/Inc/main.h \
- ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h \
+App/Src/app_evse.o: ../App/Src/app_evse.c \
+ C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_evse.h \
+ ../Core/Inc/main.h ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h \
  ../Core/Inc/stm32f0xx_hal_conf.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h \
@@ -28,8 +29,9 @@ App/Src/app_led.o: ../App/Src/app_led.c ../Core/Inc/main.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h \
- C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_led.h \
- C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_evse.h
+ C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_pwm.h \
+ C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_relay.h
+C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_evse.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h:
 ../Core/Inc/stm32f0xx_hal_conf.h:
@@ -60,5 +62,5 @@ App/Src/app_led.o: ../App/Src/app_led.c ../Core/Inc/main.h \
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h:
-C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_led.h:
-C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_evse.h:
+C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_pwm.h:
+C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_relay.h:

@@ -4,7 +4,7 @@
 /* LED Hardware Definitions */
 #define LED_PORT        GPIOC
 #define LED_RED_PIN     GPIO_PIN_14
-#define LED_BLUE_PIN    GPIO_PIN_15
+#define LED_BLUE_PIN    GPIO_PIN_13
 
 /* Helper Macros */
 #define LED_RED_ON()    HAL_GPIO_WritePin(LED_PORT, LED_RED_PIN, GPIO_PIN_SET)

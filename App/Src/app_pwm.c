@@ -10,8 +10,8 @@ void App_PWM_Init(void)
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
 }
 
-void App_PWM_SetDutyCycle(uint32_t adc_value)
+void App_PWM_SetDutyCycle(uint32_t duty)
 {
     // 3. Apply the calculated pulse width to the Timer
-    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, adc_value);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, duty);
 }

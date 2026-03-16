@@ -1,0 +1,2 @@
+../App/Src/app_evse.c:10:6:App_EVSE_Init	8	static
+../App/Src/app_evse.c:15:14:App_EVSE_Process	40	static

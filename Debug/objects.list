@@ -1,4 +1,5 @@
 "./App/Src/app_adc.o"
+"./App/Src/app_evse.o"
 "./App/Src/app_led.o"
 "./App/Src/app_main.o"
 "./App/Src/app_pwm.o"
