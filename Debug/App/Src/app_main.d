@@ -29,12 +29,22 @@ App/Src/app_main.o: ../App/Src/app_main.c \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ ../Core/Inc/FreeRTOSConfig.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM0/portmacro.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_adc.h \
  C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_led.h \
  C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_evse.h \
  C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_evse.h \
  C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_pwm.h \
- C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_relay.h
+ C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_relay.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_main.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h:
@@ -66,9 +76,19 @@ C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
+../Core/Inc/FreeRTOSConfig.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM0/portmacro.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_adc.h:
 C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_led.h:
 C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_evse.h:
 C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_evse.h:
 C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_pwm.h:
 C:/Users/INTERN_AMAN/STM32CubeIDE/workspace_1.19.0/moduler_firmware/App/Inc/app_relay.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:

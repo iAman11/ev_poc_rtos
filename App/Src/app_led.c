@@ -1,5 +1,7 @@
 #include "main.h"
 #include "app_led.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
 /* LED Hardware Definitions */
 #define LED_PORT        GPIOC
@@ -16,72 +18,53 @@
 #define LED_RED_TOGGLE()    HAL_GPIO_TogglePin(LED_PORT, LED_RED_PIN)
 #define LED_BLUE_TOGGLE()   HAL_GPIO_TogglePin(LED_PORT, LED_BLUE_PIN)
 
+extern EVSE_State_t current_evse_state;
 
-/* Initialize LED states */
 void App_LED_Init(void)
 {
     LED_RED_ON();      // Default: Disconnected state
     LED_BLUE_OFF();
 }
 
-
-/* Set base LED state based on EVSE state */
 void App_LED_SetState(EVSE_State_t state)
 {
     static EVSE_State_t last_state = EVSE_STATE_UNKNOWN;
 
-    /* Only update LEDs if state has changed */
     if (state != last_state)
     {
-        /* Clear LEDs before applying new state */
         LED_RED_OFF();
         LED_BLUE_OFF();
 
         switch (state)
         {
-            case EVSE_STATE_A_DISCONNECTED:
-                LED_RED_ON();
-                break;
-
-            case EVSE_STATE_B_CONNECTED:
-                LED_BLUE_ON();
-                break;
-
-            case EVSE_STATE_C_CHARGING:
-                /* Start Blue ON so blink starts clean */
-                LED_BLUE_ON();
-                break;
-
-            case EVSE_STATE_FAULT_PE:
-                /* Start Red ON so blink starts clean */
-                LED_RED_ON();
-                break;
-
-            default:
-                /* Unknown state → both OFF */
-                break;
+            case EVSE_STATE_A_DISCONNECTED: LED_RED_ON(); break;
+            case EVSE_STATE_B_CONNECTED:    LED_BLUE_ON(); break;
+            case EVSE_STATE_C_CHARGING:     LED_BLUE_ON(); break;
+            case EVSE_STATE_FAULT_PE:       LED_RED_ON(); break;
+            default: break;
         }
-
         last_state = state;
     }
 }
 
-
-/* Called periodically (ex: 500ms timer) for blinking */
 void App_LED_ToggleHeartbeat(EVSE_State_t current_state)
 {
     switch (current_state)
     {
-        case EVSE_STATE_C_CHARGING:
-            LED_BLUE_TOGGLE();
-            break;
+        case EVSE_STATE_C_CHARGING: LED_BLUE_TOGGLE(); break;
+        case EVSE_STATE_FAULT_PE:   LED_RED_TOGGLE(); break;
+        default: break;
+    }
+}
 
-        case EVSE_STATE_FAULT_PE:
-            LED_RED_TOGGLE();
-            break;
-
-        default:
-            /* No blinking in other states */
-            break;
+// RTOS UI Task Wrapper
+void vTask_LED_Heartbeat(void *pvParameters)
+{
+    while(1)
+    {
+        App_LED_ToggleHeartbeat(current_evse_state);
+        
+        // Non-blocking RTOS delay. Yields CPU for 500ms.
+        vTaskDelay(pdMS_TO_TICKS(500)); 
     }
 }

@@ -1,2 +1,3 @@
 ../App/Src/app_evse.c:15:6:App_EVSE_Init	8	static
-../App/Src/app_evse.c:20:14:App_EVSE_Process	40	static
+../App/Src/app_evse.c:21:14:App_EVSE_Process	40	static
+../App/Src/app_evse.c:66:6:vTask_EVSE_Logic	144	static
