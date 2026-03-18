@@ -1,2 +1,2 @@
-../App/Src/app_main.c:15:6:App_Init	8	static
-../App/Src/app_main.c:23:6:App_main	16	static
+../App/Src/app_main.c:24:6:App_Init	8	static
+../App/Src/app_main.c:32:6:App_main	32	static

@@ -4,6 +4,6 @@
 #include "main.h"
 
 void App_PWM_Init(void);
-void App_PWM_SetDutyCycle(uint32_t adc_value);
+void App_PWM_SetDutyCycle(uint32_t duty);
 
 #endif /* APP_PWM_H */

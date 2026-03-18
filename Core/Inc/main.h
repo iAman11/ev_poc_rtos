@@ -65,6 +65,14 @@ void Error_Handler(void);
 #define LED_RED_GPIO_Port GPIOC
 #define LED_BLUE_Pin GPIO_PIN_15
 #define LED_BLUE_GPIO_Port GPIOC
+#define CP_Pin GPIO_PIN_1
+#define CP_GPIO_Port GPIOA
+#define Cable_Sense_Pin GPIO_PIN_2
+#define Cable_Sense_GPIO_Port GPIOA
+#define TEMP_SEN_Pin GPIO_PIN_3
+#define TEMP_SEN_GPIO_Port GPIOA
+#define CP_PWM_Pin GPIO_PIN_11
+#define CP_PWM_GPIO_Port GPIOA
 #define RELAY_IN_Pin GPIO_PIN_12
 #define RELAY_IN_GPIO_Port GPIOA
 
