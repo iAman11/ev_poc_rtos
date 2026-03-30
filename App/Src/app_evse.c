@@ -9,8 +9,9 @@
 #define ADC_3V_THRESHOLD 1000
 #define ADC_PE_FAULT_THRESHOLD 3900
 
-EVSE_State_t current_evse_state = EVSE_STATE_A_DISCONNECTED;
-float actual_temp_c = 0.0f;
+volatile EVSE_State_t current_evse_state = EVSE_STATE_A_DISCONNECTED;
+volatile float        actual_temp_c       = 0.0f;
+volatile ADC_Data_t   live_adc_values     = {0};
 
 void App_EVSE_Init(void)
 {
@@ -51,7 +52,7 @@ EVSE_State_t App_EVSE_Process(uint32_t cp_voltage, uint32_t cable_value, uint32_
         }
         else
         {
-        	new_state = EVSE_STATE_FAULT_PE;
+        	new_state = EVSE_STATE_FAULT_CP;
         	App_Relay_TurnOff();
         }
     }
@@ -78,6 +79,8 @@ void vTask_EVSE_Logic(void *pvParameters)
         // Block indefinitely until new ADC data arrives from DMA
         if (xQueueReceive(xAdcDataQueue, &received_data, portMAX_DELAY) == pdPASS)
         {
+            // Mirror raw ADC values to global for Live Expressions / debugger
+            live_adc_values = received_data;
             // 1. Process PA4 (PE) Moving Average
             if (is_first_run)
             {

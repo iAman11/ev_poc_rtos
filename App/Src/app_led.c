@@ -18,7 +18,7 @@
 #define LED_RED_TOGGLE()    HAL_GPIO_TogglePin(LED_PORT, LED_RED_PIN)
 #define LED_BLUE_TOGGLE()   HAL_GPIO_TogglePin(LED_PORT, LED_BLUE_PIN)
 
-extern EVSE_State_t current_evse_state;
+extern volatile EVSE_State_t current_evse_state;
 
 void App_LED_Init(void)
 {
@@ -41,6 +41,7 @@ void App_LED_SetState(EVSE_State_t state)
             case EVSE_STATE_B_CONNECTED:    LED_BLUE_ON(); break;
             case EVSE_STATE_C_CHARGING:     LED_BLUE_ON(); break;
             case EVSE_STATE_FAULT_PE:       LED_RED_ON(); break;
+            case EVSE_STATE_FAULT_CP:       LED_RED_ON(); break;
             default: break;
         }
         last_state = state;
@@ -53,6 +54,7 @@ void App_LED_ToggleHeartbeat(EVSE_State_t current_state)
     {
         case EVSE_STATE_C_CHARGING: LED_BLUE_TOGGLE(); break;
         case EVSE_STATE_FAULT_PE:   LED_RED_TOGGLE(); break;
+        case EVSE_STATE_FAULT_CP:   LED_RED_TOGGLE(); break;
         default: break;
     }
 }
