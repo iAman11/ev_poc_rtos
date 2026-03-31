@@ -6,6 +6,7 @@
 #include "app_relay.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "app_comm.h"
 
 // OS Primitives
 QueueHandle_t xAdcDataQueue;
@@ -20,6 +21,8 @@ void App_Init(void)
     App_Relay_Init();
     App_LED_Init();
     App_EVSE_Init();
+
+    App_Comm_Init();
 
 
     // 2. Create RTOS Primitives

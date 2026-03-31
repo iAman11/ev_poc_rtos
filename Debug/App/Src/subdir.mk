@@ -6,6 +6,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../App/Src/app_adc.c \
+../App/Src/app_comm.c \
 ../App/Src/app_evse.c \
 ../App/Src/app_led.c \
 ../App/Src/app_main.c \
@@ -14,6 +15,7 @@ C_SRCS += \
 
 OBJS += \
 ./App/Src/app_adc.o \
+./App/Src/app_comm.o \
 ./App/Src/app_evse.o \
 ./App/Src/app_led.o \
 ./App/Src/app_main.o \
@@ -22,6 +24,7 @@ OBJS += \
 
 C_DEPS += \
 ./App/Src/app_adc.d \
+./App/Src/app_comm.d \
 ./App/Src/app_evse.d \
 ./App/Src/app_led.d \
 ./App/Src/app_main.d \
@@ -36,7 +39,7 @@ App/Src/%.o App/Src/%.su App/Src/%.cyclo: ../App/Src/%.c App/Src/subdir.mk
 clean: clean-App-2f-Src
 
 clean-App-2f-Src:
-	-$(RM) ./App/Src/app_adc.cyclo ./App/Src/app_adc.d ./App/Src/app_adc.o ./App/Src/app_adc.su ./App/Src/app_evse.cyclo ./App/Src/app_evse.d ./App/Src/app_evse.o ./App/Src/app_evse.su ./App/Src/app_led.cyclo ./App/Src/app_led.d ./App/Src/app_led.o ./App/Src/app_led.su ./App/Src/app_main.cyclo ./App/Src/app_main.d ./App/Src/app_main.o ./App/Src/app_main.su ./App/Src/app_pwm.cyclo ./App/Src/app_pwm.d ./App/Src/app_pwm.o ./App/Src/app_pwm.su ./App/Src/app_relay.cyclo ./App/Src/app_relay.d ./App/Src/app_relay.o ./App/Src/app_relay.su
+	-$(RM) ./App/Src/app_adc.cyclo ./App/Src/app_adc.d ./App/Src/app_adc.o ./App/Src/app_adc.su ./App/Src/app_comm.cyclo ./App/Src/app_comm.d ./App/Src/app_comm.o ./App/Src/app_comm.su ./App/Src/app_evse.cyclo ./App/Src/app_evse.d ./App/Src/app_evse.o ./App/Src/app_evse.su ./App/Src/app_led.cyclo ./App/Src/app_led.d ./App/Src/app_led.o ./App/Src/app_led.su ./App/Src/app_main.cyclo ./App/Src/app_main.d ./App/Src/app_main.o ./App/Src/app_main.su ./App/Src/app_pwm.cyclo ./App/Src/app_pwm.d ./App/Src/app_pwm.o ./App/Src/app_pwm.su ./App/Src/app_relay.cyclo ./App/Src/app_relay.d ./App/Src/app_relay.o ./App/Src/app_relay.su
 
 .PHONY: clean-App-2f-Src
 
