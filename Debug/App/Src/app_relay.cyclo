@@ -1,4 +1,0 @@
-../App/Src/app_relay.c:3:6:App_Relay_Init	1
-../App/Src/app_relay.c:9:6:App_Relay_Toggle	1
-../App/Src/app_relay.c:15:6:App_Relay_TurnOn	1
-../App/Src/app_relay.c:21:6:App_Relay_TurnOff	1

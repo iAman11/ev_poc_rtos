@@ -1,4 +1,0 @@
-../App/Src/app_led.c:23:6:App_LED_Init	8	static
-../App/Src/app_led.c:29:6:App_LED_SetState	16	static
-../App/Src/app_led.c:50:6:App_LED_ToggleHeartbeat	16	static
-../App/Src/app_led.c:61:6:vTask_LED_Heartbeat	16	static
