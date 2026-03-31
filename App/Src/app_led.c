@@ -38,6 +38,7 @@ void App_LED_SetState(EVSE_State_t state)
         switch (state)
         {
             case EVSE_STATE_A_DISCONNECTED: LED_RED_ON(); break;
+            case EVSE_STATE_pCable_DISCONNECTED: LED_RED_ON(); LED_BLUE_ON(); break;
             case EVSE_STATE_B_CONNECTED:    LED_BLUE_ON(); break;
             case EVSE_STATE_C_CHARGING:     LED_BLUE_ON(); break;
             case EVSE_STATE_FAULT_PE:       LED_RED_ON(); break;
